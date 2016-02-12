@@ -1,0 +1,21 @@
+{
+  "name": "backbone.computed",
+  "version": "0.0.1",
+  "description": "Simple computed fields for Backbone models",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Backbone",
+    "Model",
+    "Computed",
+    "Property",
+    "Field"
+  ],
+  "author": "Jake Aitchison",
+  "license": "LGPL-2.1",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
