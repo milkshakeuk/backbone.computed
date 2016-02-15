@@ -1,11 +1,40 @@
-Backbone.Computed = (function (Backbone, _) {
-  var toJSON = Backbone.Model.prototype.toJSON;
-  var get = Backbone.Model.prototype.get;
+/* global require, define */
 
-  var obj = {
-    // Return a copy of the model's `attributes` object.
-    // When saving we dont want to pollute the attributes with computed
-    // properties but when serialising for use with the templates we do
+(function (root, factory) {
+  // Start with AMD support.
+  if (typeof define === 'function' && define.amd) {
+    define(['underscore', 'backbone'], function (_, Backbone) {
+      factory(root, _, Backbone);
+    });
+
+    // Next check for Node.js or CommonJS.
+  } else if (typeof exports !== 'undefined') {
+    var _ = require('underscore');
+    var Backbone = require('backbone');
+    factory(root, _, Backbone);
+
+    // Finnaly, if none of the above, create the extension and
+    // assume Backbone is available at (browser) global scope.
+  } else {
+    factory(root, root._, root.Backbone);
+  }
+} (this, function (root, _, BackboneBase) {
+
+  var Backbone = _.extend({}, BackboneBase);
+
+  // original implamentation of `toJSON` and `get`
+  var toJSON = BackboneBase.Model.prototype.toJSON;
+  var get = BackboneBase.Model.prototype.get;
+
+  Backbone.Model = BackboneBase.Model.extend({
+    /**
+     * Return a copy of the model's `attributes` object.
+     * When saving we dont want to pollute the attributes with computed
+     * properties but when serialising for use with the templates we do
+     *
+     * @param {Object} options Passed from Backbone.sync
+     * @returns {Object} JSON copy of the model's `attributes` object
+     */
     toJSON: function (options) {
       var isSaving = _.has(options, 'emulateHTTP');
       if (isSaving) return toJSON.call(this, options);
@@ -23,9 +52,14 @@ Backbone.Computed = (function (Backbone, _) {
       return _.extend(computed, this.attributes);
     },
 
-    // Get the value of an attribute or computed property.
-    // If we have a computed and non-computed property clash then the non-computed
-    // value should be returned
+    /**
+     * Get the value of an attribute or computed property.
+     * If we have a computed and non-computed property clash then the non-computed
+     * value should be returned
+     *
+     * @param {String} attr Name of model property
+     * @returns Value of computed property or model attribute
+     */
     get: function (attr) {
       var hasComputed = this.computed && _.has(this.computed, attr);
       var hasNonComputed = _.has(this.attributes, attr);
@@ -37,5 +71,6 @@ Backbone.Computed = (function (Backbone, _) {
 
       return get.call(this, attr);
     }
-  }
-})(Backbone, _);
+  });
+
+}));
