@@ -15,12 +15,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
-      {pattern: 'src/backbone.computed.js', included: false},
-      {pattern: 'test/*Spec.js', included: false},
-      {pattern: 'test/*.spec.js[3s', included: false},
-      {pattern: 'test/*.spec.js[3s', included: false},
-      {pattern: 'test/*.spec.js', included: false}
+      { pattern: 'node_modules/underscore/underscore.js', included: false },
+      { pattern: 'node_modules/backbone/backbone.js', included: false },
+      { pattern: 'node_modules/jquery/dist/jquery.js', included: false },
+      { pattern: 'src/backbone.computed.js', included: false },
+      { pattern: 'test/**/*.spec.js', included: false },
+
+      'test/test-main.js'
     ],
 
 
@@ -38,7 +39,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha'],
 
 
     // web server port
@@ -65,7 +66,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
