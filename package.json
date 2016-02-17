@@ -13,11 +13,14 @@
     "Property",
     "Field"
   ],
-  "author": "Jake Aitchison",
+  "author": "Jake Aitchison <jake.aitchison@outlook.com>",
   "license": "LGPL-2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/milkshakeuk/backbone.computed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/milkshakeuk/backbone.computed/issues"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
