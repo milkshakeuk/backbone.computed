@@ -15,6 +15,10 @@
   ],
   "author": "Jake Aitchison",
   "license": "LGPL-2.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milkshakeuk/backbone.computed.git"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "jasmine-core": "^2.4.1",
@@ -25,7 +29,6 @@
     "karma-mocha-reporter": "^1.1.5",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-requirejs": "^0.2.5",
-    "phantomjs": "^2.1.3",
     "phantomjs-prebuilt": "^2.1.4",
     "requirejs": "^2.1.22"
   },
