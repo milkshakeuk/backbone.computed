@@ -71,6 +71,7 @@
     }
   });
 
+  _.extend(exports, Backbone);
   return Backbone;
 
 }));
