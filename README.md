@@ -76,9 +76,9 @@ The example below is using `Marionettes` default template system which is really
 ```html
 <script id="person-template" type="text/template">
   <div class="person">
-    <h1><%= fullName ></h1>
+    <h1><%= fullName %></h1>
     <div class="details">
-        Age: <%= age >
+        Age: <%= age %>
     </div>
   </div>
 </script>
