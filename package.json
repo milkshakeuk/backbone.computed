@@ -1,6 +1,6 @@
 {
   "name": "backbone.computed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple computed fields for Backbone models",
   "main": "dist/backbone.computed.js",
   "scripts": {

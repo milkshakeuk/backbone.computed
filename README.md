@@ -1,4 +1,8 @@
-# backbone.computed [![Build Status][travis-image]][travis-url] [![Dependancy Status][dependancy-image]][dependancy-url] [![Dev Dependancy Status][devdependancy-image]][dependancy-url]
+backbone.computed
+===============
+
+[![Build Status][travis-image]][travis-url] [![Dependancy Status][dependancy-image]][dependancy-url] [![Dev Dependancy Status][devdependancy-image]][dependancy-url]
+
 Simple computed fields for Backbone models
 
 ## Introduction
@@ -105,9 +109,9 @@ this will again results in:
 </div>
 ```
 ## Duck Punching
-This plugin adds its functionality by duck punching the original implamentations of `get` and `toJSON` on `Backbone.Model`.
+This plugin adds its functionality by duck punching the original implementations of `get` and `toJSON` on `Backbone.Model`.
 
-If no computed properties exist the original implamentations will kick in.
+If no computed properties exist the original implementations will kick in.
 
 [travis-url]: https://travis-ci.org/milkshakeuk/backbone.computed
 [travis-image]: https://travis-ci.org/milkshakeuk/backbone.computed.svg?branch=master
